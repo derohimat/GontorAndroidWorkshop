@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName;
 public class BaseResponse {
 
     @SerializedName("data")
-    private UserResponse userResponse;
+    private UserResponse data;
 
     public UserResponse getData() {
-        return userResponse;
+        return data;
     }
 
     @Override
     public String toString() {
         return
                 "BaseResponse{" +
-                        "data = '" + userResponse + '\'' +
+                        "data = '" + data + '\'' +
                         "}";
     }
 }
