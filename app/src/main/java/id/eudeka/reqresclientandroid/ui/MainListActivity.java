@@ -41,7 +41,9 @@ public class MainListActivity extends AppCompatActivity {
 
         swipeRefreshLayout.setOnRefreshListener(() -> getDataUsers());
 
-        mainListAdapter = new MainListAdapter(context, userResponseList);
+        mainListAdapter = new MainListAdapter(context, userResponseList, item ->
+                DetailActivity.start(context, item.getId())
+        );
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
