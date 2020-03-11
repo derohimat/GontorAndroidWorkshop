@@ -5,6 +5,7 @@ import id.eudeka.reqresclientandroid.data.model.BaseResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -12,6 +13,6 @@ public interface ApiInterface {
     Call<BaseResponse> getUser(@Path("id") int id);
 
     @GET("users")
-    Call<BaseListResponse> getUsers();
+    Call<BaseListResponse> getUsers(@Query("page") int page, @Query("per_page") int perPage);
 
 }

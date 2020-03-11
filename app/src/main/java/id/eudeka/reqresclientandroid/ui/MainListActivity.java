@@ -68,7 +68,7 @@ public class MainListActivity extends AppCompatActivity {
 
         showProgress(true);
 
-        Call<BaseListResponse> call = apiInterface.getUsers();
+        Call<BaseListResponse> call = apiInterface.getUsers(1, 10);
         call.enqueue(new Callback<BaseListResponse>() {
             @Override
             public void onResponse(Call<BaseListResponse> call, Response<BaseListResponse> response) {
